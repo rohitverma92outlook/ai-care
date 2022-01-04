@@ -1,0 +1,33 @@
+{% extends "index.html" %}
+{% block content %}  
+
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>Heart Failure Prediction</title>
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/heart_disease_style_outcome.css') }}">
+
+        
+
+    </head>  
+
+    
+    <body>
+        
+        <h1>Percentage Probability of having heart failure:</h1>
+        
+        {% if prediction[0] == 1  %}
+        <h3>Patient may have moderate to high risk of heart failure with {{probabilty[0,1]*100}}% chances.😔</h3>
+        {% else %}
+        <h3>Patient heart is healthy.😀</h3>
+        {% endif %}
+
+    </body>
+    <img src="\static\image\healthcare_gif.gif" alt= "healthcare_gif" >
+    
+
+
+</html>
+
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends "index.html" %}
+{% block content %}  
+
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <title>Heart</title>    
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/heart_disease_style.css') }}">
+        
+    </head>
+    
+    <body>
+        
+        <h2>Heart Disease Input Fields:</h2>
+        
+        <form action="{{ url_for('heart_failure') }}" method="post">
+            <label for="Age">Age:</label><br>
+            <input type="text" id="Age" name="Age" placeholder="Enter age of patient"><br>
+            <label for="Sex">Sex:</label><br>
+            <select id="Sex" name="Sex">
+                <option value="M">Male (M)</option>>
+                <option value="F">Female (F)</option>
+            </select><br>
+            <label for="Chest Pain Type">Chest Pain Type:</label><br>
+            <select id="Chest Pain Type" name = "Chest Pain Type">
+                <option value="TA">Typical Angina (TA)</option>
+                <option value="ATA">Atypical Angina (ATA)</option>
+                <option value="NAP">Non-Anginal Pain (NAP)</option>
+                <option value="ASY">Asymptomatic (ASY)</option>
+            </select><br>
+            <label for="Resting BP">Resting BP:</label><br>
+            <input type="text" id="Resting BP" name="Resting BP" placeholder="Enter resting blood pressure of patient"><br>
+            <label for="Cholesterol">Cholesterol:</label><br>
+            <input type="text" id="Cholesterol" name="Cholesterol" placeholder="Enter cholesterol level of patient"><br>
+            <label for="Fasting BS">Fasting BS:</label><br>
+            <select id="Fasting BS" name="Fasting BS">
+                <option value=1>Greater than 120 mg/dl (1)</option>
+                <option value=0>Less than 120 mg/dl (0)</option>
+            </select><br>
+            <label for="Resting ECG">Resting ECG:</label><br>
+            <select id="Resting ECG" name = "Resting ECG">
+                <option value="Normal">Normal</option>
+                <option value="ST">ST</option>
+                <option value="LVH">LVH</option>
+            </select><br>
+            <label for="Max HR">Max HR:</label><br>
+            <input type="text" id="Max HR" name="Max HR" placeholder="Enter maximum heart rate of patient range is 60 to 202"><br>
+            <label for="Exercise Angina">Exercise Angina:</label><br>
+            <select id="Exercise Angina" name="Exercise Angina">
+                <option value=Y>Yes</option>
+                <option value=N>No</option>
+            </select><br>
+            <label for="Oldpeak">Oldpeak:</label><br>
+            <input type="text" id="Oldpeak" name="Oldpeak" placeholder="Enter numeric value measured in depression"><br>
+            <label for="ST Slope">ST Slope:</label><br>
+            <select id="ST Slope" name = "ST Slope">
+                <option value="Up">Up</option>
+                <option value="Flat">Flat</option>
+                <option value="Down">Down</option>
+            </select><br><br><br>
+            <input type="submit" value="Submit">
+            <input type="reset">
+        </form>
+
+       
+    </body>
+</html>
+
+{% endblock %}
